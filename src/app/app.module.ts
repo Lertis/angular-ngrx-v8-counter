@@ -13,7 +13,14 @@ import { MatButtonModule } from '@angular/material/button';
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({ count: counterReducer }),
+    StoreModule.forRoot({ count: counterReducer }, {
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true,
+        strictActionSerializability: true,
+        strictStateSerializability: true
+      }
+    }),
     StoreDevtoolsModule.instrument({
       maxAge: 10
     }),
