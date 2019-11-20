@@ -12,7 +12,6 @@ export class AppComponent {
   count$: Observable<number>;
  
   constructor(private store: Store<{ count: number }>) {
-    // comment
     this.count$ = store.pipe(select('count'));
   }
  
